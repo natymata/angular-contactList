@@ -7,24 +7,27 @@
 	</div> <!-- addHeader -->
 
 	<div class="contact-add">
-		<form ng-submit="addContact()">
+		<form name="addForm" ng-submit="addForm.$valid && addContact()" novalidate>
 			<div class="form-group">
-				<label>Nombre:</label> <input type="text" ng-model= "newContact.name" required  class="form-control">
+				<sub ng-show="addForm.name.$invalid && addForm.name.$touched">El nombre es requerido</sub>
+				<label>Nombre:</label> <input type="text" name="name" ng-model= "newContact.name" required  class="form-control" ng-model-options="{ updateOn:'blur'}">
 			</div>
 			<div class="form-group">
-				<label>Apellido:</label> <input type="text" ng-model= "newContact.lastName"  class="form-control">
+				<label>Apellido:</label> <input type="text" name="lastName" ng-model= "newContact.lastName"  class="form-control">
 			</div>
 			<div class="form-group">
-				<label>Empresa:</label> <input type="text" ng-model= "newContact.empresa"  class="form-control">
+				<label>Empresa:</label> <input type="text" name="empresa" ng-model= "newContact.empresa"  class="form-control">
 			</div>
 			<div class="form-group has-feedback">
-				<label>Teléfono:</label> <input type="text" ng-model= "newContact.telefono" class="form-control" required>
+				<sub ng-show="addForm.phone.$invalid && addForm.phone.$touched">Campo inválido</sub>
+				<label>Teléfono:</label> <input type="number" name="phone" ng-model= "newContact.telefono" class="form-control" ng-minlength="6" ng-maxlength="20" ng-model-options="{ updateOn: 'blur' }" required>
 			</div>
 			<div class="form-group">
-				<label>E-mail:</label> <input type="email" ng-model= "newContact.email"  class="form-control">
+				<sub ng-show="addForm.email.$invalid && addForm.email.$dirty">E-mail inválido</sub>
+				<label>E-mail:</label> <input type="email" name="email" ng-model= "newContact.email" class="form-control" ng-model-options="{ updateOn: 'blur'}">
 			</div>
 			<div class="form-group">
-				<label>Notas:</label><textarea ng-model= "newContact.notes" cols="30" rows="4" class="form-control"></textarea>
+				<label>Notas:</label><textarea ng-model= "newContact.notes" name="notes" cols="30" rows="4" class="form-control"></textarea>
 			</div>
 
 			<button type="submit" class="btn btn-info" ng-show="contactId==0"><span class="glyphicon glyphicon-ok"></span> Agregar</button>

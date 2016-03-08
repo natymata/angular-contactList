@@ -245,3 +245,21 @@ textarea{
 	margin-bottom: 22px;
 }
 
+/*validaciones*/
+input.ng-invalid.ng-dirty{
+	border: 1px solid #fa787e;
+}
+
+input.ng-valid.ng-dirty{
+	border: 1px solid #78fa89;
+}
+
+input.ng-invalid.ng-touched.ng-invalid-required{
+	border: 1px solid #fa787e;
+}
+
+sub{
+	float: right;
+	margin-top:12px;
+}
+

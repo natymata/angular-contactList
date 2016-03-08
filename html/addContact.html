@@ -1,0 +1,38 @@
+<section class="add-contact">
+	<div class="addHeader">
+		<a class="btn" ng-href="#/indice" ng-show="contactId==0">&#8810;</a>
+		<a class="btn" ng-href="#/detalle/{{contactId}}" ng-show="contactId>0">&#8810;</a>
+		<h3 ng-show="contactId==0">Agregar Contacto</h3>
+		<h3 ng-show="contactId>0">Editar</h3>
+	</div> <!-- addHeader -->
+
+	<div class="contact-add">
+		<form ng-submit="addContact()">
+			<div class="control-form">
+				<label>Nombre:</label> <input type="text" ng-model= "newContact.name" required>
+			</div>
+			<div class="control-form">
+				<label>Apellido:</label> <input type="text" ng-model= "newContact.lastName">
+			</div>
+			<div class="control-form">
+				<label>Empresa:</label> <input type="text" ng-model= "newContact.empresa">
+			</div>
+			<div class="control-form">
+				<label>Teléfono:</label> <input type="text" ng-model= "newContact.telefono" required>
+			</div>
+			<div class="control-form">
+				<label>E-mail:</label> <input type="email" ng-model= "newContact.email">
+			</div>
+			<div class="control-form">
+				<label>Notas:</label><textarea ng-model= "newContact.notes" cols="30" rows="4"></textarea>
+			</div>
+
+			<button type="submit" class="btn btn-info" ng-show="contactId==0"><span class="glyphicon glyphicon-ok"></span> Agregar</button>
+
+			<button type="button" class="btn btn-info" ng-show="contactId>0" ng-click="edit()"><span class="glyphicon glyphicon-ok"></span> Actualizar</button>
+
+			<a ng-href="#/detalle/{{contactId}}" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>  Cancelar</a>
+		</form>
+		
+	</div> <!-- addHeader -->
+</section> <!-- main-list -->

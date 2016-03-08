@@ -1,0 +1,49 @@
+<section class="detail">
+	<div class="detailHeader">
+		<a class="btn" ng-href="#/indice">&#8810;</a>
+		<h1>Detalles</h1>
+	</div> <!-- detailHeader -->
+
+	<div class="contact-detail">
+
+		<h2>{{contact.name}} {{contact.lastName}}</h2>
+		<p>{{contact.empresa}}</p>
+
+		<table class="table table-striped">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Teléfono</td>
+					<td> {{contact.telefono}}</td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td>{{contact.email}}</td>
+				</tr>
+				<tr>
+					<td>Notas</td>
+					<td><div class="scrollable">{{contact.notes}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a ng-href="#/agregar/{{contact.id}}" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+
+		<a ng-href="#/indice" ng-click="deleteContact()" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>  Eliminar</a>
+
+
+
+<!-- 
+		<ul class="ul-main">
+			<li>Teléfonos</li>
+            <li ng-repeat="telefonos in contact">
+                <ul class="ul-secondary">
+                    <li ng-repeat="number in telefonos.telefonos"><span class="cell">Teléfono</span><span class="cell">{{number}}</span></li>
+                </ul>
+            </li>
+        </ul> -->
+	
+
+		</div>
+</section> <!-- detail -->

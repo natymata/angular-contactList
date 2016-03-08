@@ -1,0 +1,33 @@
+<header>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">ContactList</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a ng-href="#/agregar/0"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
+	    </ul>
+	  </div>
+	</nav>
+</header>
+
+<section class="main-list">
+	<form ng-submit="searchContact()">
+		<div class="form-group has-feedback">
+			<input type="search" ng-model="search" class="form-control" required placeholder="Buscar" class="search-input">
+		    <i class="glyphicon  glyphicon-search form-control-feedback"></i>
+		</div>
+	</form>
+
+	<div class="displayContacts">
+		<ul>
+			<li ng-repeat="contact in contacts | orderBy: 'name' | filter:search track by $index">
+				<a ng-href="#/detalle/{{contact.id}}"> {{contact.name}} {{contact.lastName}} <span>&#8811;</span></a>
+			</li>
+		</ul>
+		<p ng-show="contacts.length>0">{{contacts.length}} Contactos </p>
+	</div> <!-- displayContacts -->
+</section> <!-- main-list -->
+
+
+

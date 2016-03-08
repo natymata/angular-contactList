@@ -8,31 +8,35 @@
 
 	<div class="contact-add">
 		<form ng-submit="addContact()">
-			<div class="control-form">
-				<label>Nombre:</label> <input type="text" ng-model= "newContact.name" required>
+			<div class="form-group">
+				<label>Nombre:</label> <input type="text" ng-model= "newContact.name" required  class="form-control">
 			</div>
-			<div class="control-form">
-				<label>Apellido:</label> <input type="text" ng-model= "newContact.lastName">
+			<div class="form-group">
+				<label>Apellido:</label> <input type="text" ng-model= "newContact.lastName"  class="form-control">
 			</div>
-			<div class="control-form">
-				<label>Empresa:</label> <input type="text" ng-model= "newContact.empresa">
+			<div class="form-group">
+				<label>Empresa:</label> <input type="text" ng-model= "newContact.empresa"  class="form-control">
 			</div>
-			<div class="control-form">
-				<label>Teléfono:</label> <input type="text" ng-model= "newContact.telefono" required>
+			<div class="form-group has-feedback">
+				<label>Teléfono:</label> <input type="text" ng-model= "newContact.telefono" class="form-control" required>
 			</div>
-			<div class="control-form">
-				<label>E-mail:</label> <input type="email" ng-model= "newContact.email">
+			<div class="form-group">
+				<label>E-mail:</label> <input type="email" ng-model= "newContact.email"  class="form-control">
 			</div>
-			<div class="control-form">
-				<label>Notas:</label><textarea ng-model= "newContact.notes" cols="30" rows="4"></textarea>
+			<div class="form-group">
+				<label>Notas:</label><textarea ng-model= "newContact.notes" cols="30" rows="4" class="form-control"></textarea>
 			</div>
 
 			<button type="submit" class="btn btn-info" ng-show="contactId==0"><span class="glyphicon glyphicon-ok"></span> Agregar</button>
 
 			<button type="button" class="btn btn-info" ng-show="contactId>0" ng-click="edit()"><span class="glyphicon glyphicon-ok"></span> Actualizar</button>
 
-			<a ng-href="#/detalle/{{contactId}}" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>  Cancelar</a>
+			<a ng-href="#/detalle/{{contactId}}" class="btn btn-warning" ng-show="contactId>0"><span class="glyphicon glyphicon-remove"></span>  Cancelar</a>
+
+			<a ng-href="#/indice" class="btn btn-warning" ng-show="contactId==0"><span class="glyphicon glyphicon-remove"></span>  Cancelar</a>
 		</form>
 		
 	</div> <!-- addHeader -->
 </section> <!-- main-list -->
+
+

@@ -23,7 +23,7 @@ angular.module('BDServices')
 
 		var updateStorage= function(){
 			localStorage.setItem('contacts', JSON.stringify(contacts));
-		};//fin function
+		};
 
 		var updateId= function () {
 			var newId= (getId())+1;
@@ -35,7 +35,7 @@ angular.module('BDServices')
 			contacts.splice(index, 1);
 			updateStorage();
 			return getAll();
-		}//fin function
+		}
 
 		var getAll= function(){
 			return contacts;

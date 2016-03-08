@@ -19,9 +19,7 @@ angular.module('contactList.controllers')
 
 		$scope.edit= function () {
 			BDService.deleteContact($scope.newContact);
-			//$scope.newContact.id= $scope.contactId;
 			BDService.editContact($scope.newContact, $scope.contactId);
-			//BDService.saveContact($scope.newContact);
 			$scope.newContact={};
 		};
 

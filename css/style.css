@@ -27,7 +27,7 @@ body{
 .navbar-default .navbar-nav>li>a{
 	font-size: 32px;
 	color: #6F319C;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 	padding: 0;
 	margin:12px 12px 0 0;
 }
@@ -43,8 +43,7 @@ body{
 
 .navbar-default .navbar-nav>li>a:hover{
 	background-color: #e2e1e7;
-	color: #6F319C;
-	border:2px solid #fff;
+	color: #fff;
 }
 
 
@@ -236,5 +235,13 @@ input[type="text"], input[type="email"], textarea{
 textarea{
 	resize:none;
 	margin-bottom: 20px;
+}
+
+.contact-add .form-group{
+	margin-bottom: 3px;
+}
+
+.main-list .form-group{
+	margin-bottom: 22px;
 }
 

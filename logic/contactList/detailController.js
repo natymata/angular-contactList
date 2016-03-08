@@ -6,16 +6,15 @@ angular.module('contactList.controllers')
 	$scope.id= Number($routeParams.id);
 
 	$scope.contact= (function () {
-			$scope.contact= BDService.getAll().filter(function (item) {
-				return item.id== $scope.id;
-			})
-			return $scope.contact[0];
+		$scope.contact= BDService.getAll().filter(function (item) {
+			return item.id== $scope.id;
+		})
+		return $scope.contact[0];
 	})();
 
 	$scope.deleteContact= function () {
 		BDService.deleteContact($scope.contact);
 	};
 
-	
 }]);
 

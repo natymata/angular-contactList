@@ -34,4 +34,5 @@ angular.module('contactList.controllers')
 			return $scope.contact[0];
 		})();
 
-	}]);
+
+}]);
